@@ -1,0 +1,79 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    background-color: black;
+}
+#gameArea {
+    display: block;
+    width: 100vh;
+    height: 100vh;
+    margin: auto;
+    padding: auto;
+    background-image: url("./resources/images/background.gif");
+    background-size: 100vh 100vh;
+    position: relative;
+}
+/*#myCar {
+    display: inline-block;
+    position: relative;
+    width: 20vh;
+    height: 20vh;
+    background-image: url("./resources/images/audi.png");
+    background-size: 20vh 20vh;
+    transition: transform 0.125s ease-out;
+}*/
+@keyframes overlayInAnimation {
+    from {
+        transform: translateY(-50vh);
+    }
+    to {
+        transform: translateY(0vh);
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 10vh;
+    left: 10vh;
+    width: 80vh;
+    height: 40vh;
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 10vh;
+    border: 5px solid rgba(255, 255, 255, 0.6);
+    color: white;
+    animation: overlayInAnimation 1s cubic-bezier(.38,2,.5,1);
+}
+.overlay * {
+    text-align: center;
+}
+.overlay h1 {
+    font-size: 5vh;
+}
+.overlay h3 {
+    font-size: 2vh;
+}
+
+@keyframes flashing {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+}
+.pressEnter {
+    margin-top: 10vh;
+    animation: flashing 1s ease-in-out 0s infinite;
+}
+.keyboard {
+    border: 1px solid white;
+    padding: 0.5vh;
+    border-radius: 0.5vh;
+}
