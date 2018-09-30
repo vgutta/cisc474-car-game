@@ -2,7 +2,7 @@ body {
     margin: 0px;
     padding: 0px;
     overflow: hidden;
-    background-color: black;
+    background-image: url("./resources/images/grass.png");
 }
 #gameArea {
     display: block;
@@ -10,19 +10,23 @@ body {
     height: 100vh;
     margin: auto;
     padding: auto;
-    background-image: url("./resources/images/background.gif");
+    background-image: url("./resources/images/background.png");
     background-size: 100vh 100vh;
     position: relative;
 }
-/*#myCar {
-    display: inline-block;
-    position: relative;
-    width: 20vh;
-    height: 20vh;
-    background-image: url("./resources/images/audi.png");
-    background-size: 20vh 20vh;
-    transition: transform 0.125s ease-out;
-}*/
+
+#timer {
+    position: absolute;
+    left: -30vh;
+    font-family: 'Exo', sans-serif;
+    font-size: 10vh;
+    z-index:1;
+}
+
+#timer.flashing {
+    animation: flashing 1s ease-in-out 0s infinite;
+}
+
 @keyframes overlayInAnimation {
     from {
         transform: translateY(-50vh);
@@ -70,6 +74,10 @@ body {
 }
 .pressEnter {
     margin-top: 10vh;
+    animation: flashing 1s ease-in-out 0s infinite;
+}
+.pressC {
+    margin-top: 3vh;
     animation: flashing 1s ease-in-out 0s infinite;
 }
 .keyboard {
