@@ -24,7 +24,7 @@ body {
 }
 
 #timer.flashing {
-    animation: flashing 1s ease-in-out 0s infinite;
+    animation: flashing .5s 0s infinite;
 }
 
 @keyframes overlayInAnimation {
@@ -47,6 +47,7 @@ body {
     border: 5px solid rgba(255, 255, 255, 0.6);
     color: white;
     animation: overlayInAnimation 1s cubic-bezier(.38,2,.5,1);
+    z-index: 1;
 }
 .overlay * {
     text-align: center;
@@ -84,4 +85,15 @@ body {
     border: 1px solid white;
     padding: 0.5vh;
     border-radius: 0.5vh;
+}
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.people {
+    animation: fadein 0.5s;
 }

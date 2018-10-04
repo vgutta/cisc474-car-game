@@ -2,6 +2,9 @@
 <html>
 	<heaD>
 		<title>Car Game</title>
+		<script>
+			localStorage.highScore = 0;
+		</script>
 		<script type='text/javascript' src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
 		<script type='text/javascript' src='js.js'></script>
 		<link href="https://fonts.googleapis.com/css?family=Exo:500i" rel="stylesheet">
@@ -11,16 +14,17 @@
 		<div id='gameArea'>
 			<div id='myCar'>&nbsp;</div>
 			<div id='timer'>0:00</div>
-			<div id='flashingTimer'>&nbsp</div>
 			<div id='titleScreen' class='overlay'>
 				<h1>Our Awesome Car Game</h3>
 				<h3>&copy; Us 2018</h3>
+				<h3>Use the arrow keys to dodge oncoming obstacles!</h3>
 				<h3 class='pressEnter'>Press <code class='keyboard'>ENTER</code> to start!</h3>
-				<h3 class='pressC'>Press <code class='keyboard'>C</code> to change cars</h3>
+				<h3 class='pressC'>Press <code class='keyboard'>Spacebar</code> to change cars</h3>
 			</div>
 			<div id='endScreen' class='overlay' style='display: none'>
 				<h1>Game Over!</h1>
-				<h3>Your Score: <code id='finalScore'>52470</code></h3>
+				<h3>Your Score: <h3 id='finalScore'>0</h3></h3>
+				<h3>Your High Score: <span id="highScore">0</span></h3>
 				<h3 class='pressEnter'>Press <code class='keyboard'>ENTER</code> to retry!</h3>
 			</div>
 		</div>
